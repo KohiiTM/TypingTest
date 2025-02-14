@@ -18,7 +18,7 @@ let totalCorrectChars = 0;
 let totalTypedChars = 0;
 const totalTime = 60; // Total time for the test in seconds
 
-// Function to start the test
+// start the test
 function startTest() {
   chosenText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
   textDisplay.innerHTML = chosenText
@@ -38,7 +38,7 @@ function startTest() {
   totalTypedChars = 0;
 }
 
-// Function to update WPM & accuracy
+// update WPM & accuracy
 function updateStats() {
   if (!startTime) return;
 
@@ -75,14 +75,14 @@ function updateStats() {
   accuracyDisplay.textContent = accuracy;
 }
 
-// Function to ensure input is always focused
+// ensure input is always focused
 function focusInput() {
   textInput.focus();
 }
 
-// Function to start the timer and continuously update WPM
+// start the timer and continuously update WPM
 function startTimer() {
-  if (startTime) return; // Prevent multiple timers
+  if (startTime) return; 
   startTime = Date.now();
 
   timerInterval = setInterval(() => {
@@ -90,23 +90,23 @@ function startTimer() {
     const remainingTime = totalTime - elapsedTime;
     timerDisplay.textContent = remainingTime.toString();
 
-    updateStats(); // Update WPM continuously
+    updateStats(); 
 
-    // Check if time is up
+    // check if time is up
     if (remainingTime <= 0) {
       clearInterval(timerInterval);
       textInput.disabled = true;
       timerDisplay.textContent = "0";
     }
-  }, 1000); // Update every second
+  }, 1000); 
 }
 
-// Event Listener for typing
+// Typing
 textInput.addEventListener("input", () => {
   startTimer();
   updateStats();
 
-  // Check if completed
+  // completed
   if (textInput.value === chosenText) {
     totalCorrectChars += textInput.value.length; // Add the length of the completed text to totalCorrectChars
     chosenText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
@@ -118,18 +118,18 @@ textInput.addEventListener("input", () => {
   }
 });
 
-// Ensure input is focused when clicking anywhere on the page
+
 document.addEventListener("click", focusInput);
 
-// Ensure input is focused when any key is pressed
+
 document.addEventListener("keydown", focusInput);
 
-// Reset Button
+// Reset test
 resetButton.addEventListener("click", () => {
   clearInterval(timerInterval);
   startTest();
   textInput.disabled = false;
 });
 
-// Initialize test
+// start
 startTest();
