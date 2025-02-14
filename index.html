@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Typing Speed Test</h2>
+
+      <!-- Typing Test Text Display -->
+      <div id="text-display"></div>
+
+      <!-- Hidden Input Field to Capture Typing -->
+      <input type="text" id="text-input" autofocus />
+
+      <!-- Stats Display -->
+      <div class="stats">
+        <p><strong>Time:</strong> <span id="timer">0</span> sec</p>
+        <p><strong>WPM:</strong> <span id="wpm">0</span></p>
+        <p><strong>Accuracy:</strong> <span id="accuracy">100</span>%</p>
+      </div>
+
+      <!-- Reset Button -->
+      <button id="reset">Reset Test</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

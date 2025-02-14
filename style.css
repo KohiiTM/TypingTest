@@ -1,0 +1,105 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #f5f5f5;
+    text-align: center;
+    user-select: none;
+}
+
+/* Main container */
+.container {
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Title */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #f8f8f8;
+}
+
+/* Display text (typing test area) */
+#text-display {
+    font-size: 24px;
+    line-height: 1.6;
+    padding: 15px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+/* Styling individual characters in the text display */
+#text-display span {
+    transition: color 0.1s ease-in-out;
+}
+
+/* Typing input (hidden but captures user input) */
+#text-input {
+    position: absolute;
+    opacity: 0;
+}
+
+/* Typing box wrapper */
+.typing-box {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.stats p {
+    margin: 0;
+}
+
+/* Reset Button */
+#reset {
+    background: #ff5e5e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+#reset:hover {
+    background: #e04a4a;
+}
+
+/* Correct and incorrect character styling */
+.correct {
+    color: #a1ff86;
+}
+
+.incorrect {
+    color: #ff5e5e;
+}
